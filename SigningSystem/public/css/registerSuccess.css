@@ -1,0 +1,104 @@
+a{
+    text-decoration: none;
+    color:#000;
+}
+ul,li{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.floatfix:after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.floatfix{
+    *zoom:1;
+}
+body{
+    background:#f0f0f0;
+}
+
+.registerSuccess, .findPsw body{
+    height:100%;
+    width:100%;
+}
+
+
+.registerSuccess body{
+    background-image: url("../img/login.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.registerSuccess .text{
+    padding: 0px 40px 20px 20px;
+    height: 40px;
+}
+.registerSuccess .label{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.label a{
+    height: 20px;
+    font-size: 20px;
+
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    color:#d20505;
+}
+.registerSuccess .button{
+    float: left;
+    padding: 80px 0px 20px 20px;
+    height: 80px;
+}
+.text input,.button input{
+    height: 40px;
+    border:1px solid #c0c0c0;
+    border-radius: 12px;//圆角
+padding: 6px 5px;
+    margin-left:20px;
+}
+.registerSuccess form{
+    width: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -160px;
+    margin-top: -125px
+}
+
+.registerSuccess form input{
+    width: 275px;
+    background: #fff;
+    margin: 0;
+}
+
+.registerSuccess form input[type='submit'] {
+    width: 275px;
+    display:block;
+    margin: 0 auto;
+    height: 40px;
+    background:#183D8E;
+    color:#fff;
+    cursor:pointer;
+}
+
+
+.registerSuccess footer{
+    position:absolute;
+    bottom:20px;
+    display: block;
+    width:100%;
+}
+
+footer p{
+    text-align: center;
+    line-height:1.5em;
+    margin:0;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="findPsw">
+<%- include("./public/head.ejs")%>
+<body>
+<section>
+    <form action="/findPsw" method="POST">
+        <div class="text">
+            <input type="text" name="userAccount" placeholder="账户">
+        </div>
+        <div class="text">
+            <input type="text" name="userJobNumber" placeholder="工号/学号">
+        </div>
+        <div class="text">
+            <input type="text" name="adminVerify" placeholder="管理员验证码">
+            <%if(message) {%>
+                <p> <%= message%> </p>
+            <% } %>
+        </div>
+        <div class="button">
+            <input type="submit" value="找回密码">
+        </div>
+    </form>
+</section>
+<footer>
+    <p>签到点名管理系统</p>
+    <p>Copyright © 2019 GUET</p>
+</footer>
+</body>
+</html>

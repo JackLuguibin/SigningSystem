@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>签到系统</title>
+    <link href="/css/common.css" rel="stylesheet" type="text/css">
+    <link href="/css/course-work.css" rel="stylesheet" type="text/css">
+　  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body class="bge">
+    <div class="nav nav-default ">
+        <ul class="nav-menu-left">
+            <li class="nav-menu-item ktplogo ">
+                <a class="ketangpaitophref" href="javascript:;">
+                    <h2 style="margin-top: -20px;">签到系统</h2>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-menu-right">
+            <li class="nav-menu-item user">
+                <a id="user" href="javascript:;">
+                    <p><%= user.userAccount%></p>
+                    <!--<p>用户名</p><!-- 用户名 -->
+                </a>
+                <div class="user-info hide">
+                    <ul>
+                        <li>
+                            <a class="link setting">个人设置</a>
+                        </li>
+                        <li>
+                            <a class="link logout" href="url">退出账户</a><!-- 退出 -->
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="ktcon cl">
+        <div class="ktcon1 cl clearfix">
+            <p class="fl quanbucourse hide" style="display: block;">全部课程</p>
+            <div class="ktcon1l fr">+ 加入课程</div>
+        </div>
+        <div class="ktcon2 cl hide" id="viewer-container-toplists" data-course-count="50">
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+        </div>
+        <div class="ktcon2 cl  hide" id="viewer-container-lists">
+            <dl class="ktdl1 ktpx1">
+                <dt class="bgclass2">
+                    <strong>
+                        <a href="https://www.ketangpai.com/Interact/index/courseid/MDAwMDAwMDAwMLR2sZSHqaey.html"
+                            data-id="MDAwMDAwMDAwMLR2sZSHqaey" class="jumptoclass" title="科研伦理与学术规范">科研伦理与学术规范</a>
+                        <span title="2019级研究生">2019级研究生</span>
+                    </strong>
+
+                    <p class="invitecode"> <i class="iconfont iconketangma1" data-role="0"></i> 加课码：4354UN</p>
+
+                    <span>2019-2020<br>第一学期</span>
+                </dt>
+            </dl>
+            <dl class="ktdl1 ktpx1">
+                <dt class="bgclass2">
+                    <strong>
+                        <a href="https://www.ketangpai.com/Interact/index/courseid/MDAwMDAwMDAwMLR2sZSHqaey.html"
+                            data-id="MDAwMDAwMDAwMLR2sZSHqaey" class="jumptoclass" title="科研伦理与学术规范">科研伦理与学术规范</a>
+                        <span title="2019级研究生">2019级研究生</span>
+                    </strong>
+
+                    <p class="invitecode"> <i class="iconfont iconketangma1" data-role="0"></i> 加课码：4354UN</p>
+
+                    <span>2019-2020<br>第一学期</span>
+                </dt>
+            </dl>
+            <dl class="ktdl1 ktpx1">
+                <dt class="bgclass2">
+                    <strong>
+                        <a href="https://www.ketangpai.com/Interact/index/courseid/MDAwMDAwMDAwMLR2sZSHqaey.html"
+                            data-id="MDAwMDAwMDAwMLR2sZSHqaey" class="jumptoclass" title="科研伦理与学术规范">科研伦理与学术规范</a>
+                        <span title="2019级研究生">2019级研究生</span>
+                    </strong>
+
+                    <p class="invitecode"> <i class="iconfont iconketangma1" data-role="0"></i> 加课码：4354UN</p>
+
+                    <span>2019-2020<br>第一学期</span>
+                </dt>
+            </dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+            <dl style="width:272px"></dl>
+        </div>
+    </div>
+
+    <!--加入班级弹窗-->
+    <div class="chuangjiankc">
+        <div class="chuangjiankctop">加入课程</div>
+        <div class="chuangjiankccon">
+            <input id="classcode" type="text" placeholder="请输入课程加课验证码">
+        </div>
+        <div class="chuangjiankcbot">
+            <ul>
+                <li class="cjli1"><a id="cancel" class="btn btn-defalut" href="javascript:void(0);">取消</a></li>
+                <li class="cjli2"><a id="join" class="btn btn-positive" href="javascript:void(0);">加入</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--加入班级弹窗end-->
+
+    <!--弹出默认灰色背景-->
+    <div class="bg" style="display: none;"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#user").click(function () {
+                $(".user-info").removeClass("hide");
+            });
+
+            $("html").mousedown(function (e) {
+                if (!$(".user-info").hasClass("hide")) {
+                    $(".user-info").addClass("hide");
+                }
+            })
+
+            $(".ktcon1l").click(function () {
+                $(".chuangjiankc").css("display", "block");
+                $(".bg").css("display", "block");
+            })
+
+            $("#cancel").click(function () {
+                $(".chuangjiankc").css("display", "none");
+                $(".bg").css("display", "none");
+            })
+
+            $("#join").click(function () {
+                var classcode = $("#classcode").val();
+
+                if (classcode == "" || classcode == null) {
+                    alert("请输入课程码！");
+                    return;
+                }
+                
+                //后台判断课程码
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        "classcode": classcode
+                    },
+                    success: function(){
+                        window.location.reload();
+                    },
+                    error: function(){
+                        alert("课程码错误！");
+                    },
+                });
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>
